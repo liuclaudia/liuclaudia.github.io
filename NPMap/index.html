@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>MAP</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+
+<style>
+html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+        }
+</style>
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+     <script type="text/javascript"
+             src="https://maps.googleapis.com/maps/api/js?sensor=false">
+     </script>
+     <script type="text/javascript">
+
+       var map;
+       var homeLatLng = new google.maps.LatLng(1.33235, 103.775440);
+    
+     function initialise()
+     { console.log(location);
+
+       var mapOptions = {
+       center: new google.maps.LatLng(1.33235, 103.775440),
+       zoom: 18,
+       mapTypeId: google.maps.MapTypeId.ROADMAP
+     };
+
+       var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions); 
+       var infoWindow = new google.maps.InfoWindow();
+
+       var addressField = document.getElementById('search_address');
+       var geocoder = new google.maps.Geocoder();
+       function search() {
+       geocoder.geocode(
+       {'address': addressField.value}, 
+       function(results, status) { 
+       if (status == google.maps.GeocoderStatus.OK) { 
+       var loc = results[0].geometry.location;
+                 } 
+            else {
+                alert("Not found: " + status); 
+            } 
+        }
+    );
+};
+
+       var marker1 = new google.maps.Marker({
+       position: new google.maps.LatLng(1.33560, 103.776900),
+       map: map,
+       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 16',
+     });
+       google.maps.event.addListener(marker1, 'dblclick', function(){
+       infoWindow.setContent('Poolside');
+       infoWindow.open(map, this);       
+     });
+       google.maps.event.addListener(map, 'zoom_changed', function() {
+       var zoom = map.getZoom();
+       if (zoom <= 15) {
+       marker1.setMap(null);
+     } else {
+       marker1.setMap(map);
+     }
+     });  
+   
+       var marker2 = new google.maps.Marker({
+       position: new google.maps.LatLng(1.33530, 103.776360),
+       map: map,
+       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 20',
+     });     
+       google.maps.event.addListener(marker2, 'dblclick', function(){
+       infoWindow.setContent('Indoor Sports Hall');
+       infoWindow.open(map, this);       
+     });     
+       google.maps.event.addListener(map, 'zoom_changed', function() {
+       var zoom = map.getZoom();
+       if (zoom <= 15) {
+       marker2.setMap(null);
+     } else {
+       marker2.setMap(map);
+     }
+     });
+  
+
+
+     }
+
+      google.maps.event.addDomListener(window, 'load', initialise);
+     
+     </script>
+     
+
+</head>
+<body>
+
+<div id="map-canvas"></div>
+
+</body>
+</html>
