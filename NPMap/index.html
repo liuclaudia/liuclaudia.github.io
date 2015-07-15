@@ -34,28 +34,12 @@ html, body, #map-canvas {
        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions); 
        var infoWindow = new google.maps.InfoWindow();
 
-       var addressField = document.getElementById('search_address');
-       var geocoder = new google.maps.Geocoder();
-       function search() {
-       geocoder.geocode(
-       {'address': addressField.value}, 
-       function(results, status) { 
-       if (status == google.maps.GeocoderStatus.OK) { 
-       var loc = results[0].geometry.location;
-                 } 
-            else {
-                alert("Not found: " + status); 
-            } 
-        }
-    );
-};
-
        var marker1 = new google.maps.Marker({
        position: new google.maps.LatLng(1.33560, 103.776900),
        map: map,
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 16',
      });
-       google.maps.event.addListener(marker1, 'mouseover', function(){
+       google.maps.event.addListener(marker1, 'dblclick', function(){
        infoWindow.setContent('Poolside');
        infoWindow.open(map, this);       
      });
@@ -73,7 +57,7 @@ html, body, #map-canvas {
        map: map,
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 20',
      });     
-       google.maps.event.addListener(marker2, 'click', function(){
+       google.maps.event.addListener(marker2, 'dblclick', function(){
        infoWindow.setContent('Indoor Sports Hall');
        infoWindow.open(map, this);       
      });     
