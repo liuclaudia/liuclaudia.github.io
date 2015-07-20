@@ -56,11 +56,10 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 16',
      });
        infowindow = new google.maps.InfoWindow({
-       content: "<div><p>Swimming Pool</p><img width='300' height='300' src='download.png'></div>"
+       content: "<div><p>Features<li>Swimming Pool</li></p><img width='300' height='300' src='download.png'></div>"
        }); 
        google.maps.event.addListener(marker1, 'mouseover', function(){
-       infoWindow.setContent('Poolside');
-       infoWindow.open(map, this);       
+       infoWindow.open(map, marker1);       
      });
        google.maps.event.addListener(map, 'zoom_changed', function() {
        var zoom = map.getZoom();
