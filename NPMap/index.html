@@ -31,22 +31,60 @@ html, body, #map-canvas {
        mapTypeId: google.maps.MapTypeId.ROADMAP
      };
 
-       var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions); 
+       var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions); 
        var infoWindow = new google.maps.InfoWindow();
+       
+       var polylineCoords = [
+       new google.maps.LatLng(1.337592, 103.778266),
+       new google.maps.LatLng(1.337592, 103.778266),
+       new google.maps.LatLng(1.336916, 103.777322),
+       new google.maps.LatLng(1.336369, 103.776721),
+       new google.maps.LatLng(1.335629, 103.776152),
+       new google.maps.LatLng(1.335189, 103.775380),
+       new google.maps.LatLng(1.333988, 103.773803),
+       new google.maps.LatLng(1.333140, 103.771796),
+       new google.maps.LatLng(1.332475, 103.770916),
+       new google.maps.LatLng(1.331757, 103.772172),
+       new google.maps.LatLng(1.331446, 103.773180),
+       new google.maps.LatLng(1.330856, 103.773137),
+       new google.maps.LatLng(1.330008, 103.773534),
+       new google.maps.LatLng(1.329665, 103.775122),
+       new google.maps.LatLng(1.330695, 103.775423),
+       new google.maps.LatLng(1.329612, 103.777440),
+       new google.maps.LatLng(1.331853, 103.777740),
+       new google.maps.LatLng(1.334728, 103.777955),
+       new google.maps.LatLng(1.336240, 103.778255),
+       new google.maps.LatLng(1.337313, 103.778545),
+       new google.maps.LatLng(1.337592, 103.778266)         
+       ];
+
+       var polyline = new google.maps.Polyline({
+       path: polylineCoords,
+       geodisc: true,
+       strokeColor: '#0000FF',
+       strokeOpacity: 0.8,
+       strokeWeight: 1,
+     });
+
+       polyline.setMap(map);
+
+       var currentInfoWindow =  null;
 
        var marker1 = new google.maps.Marker({
        position: new google.maps.LatLng(1.33560, 103.776900),
        map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 16',
-     });
-       infowindow = new google.maps.InfoWindow({
-       content: "<div><p>Features<li>Swimming Pool</li></p><width='300' height='300' src='download.png'></div>"
+       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|16',
        });
-
+       var infowindow1 = new google.maps.InfoWindow({
+       content: "<div><p>Facilities<li>Swimming Pool</li></p><img width='300' height='200' src='download.png'></div>"
+       });
        google.maps.event.addListener(marker1, 'mouseover', function(){
-       infowindow.open(map, marker1);
-     });
-
+       if (currentInfoWindow != null){
+           currentInfoWindow.close();
+       }
+       infowindow1.open(map, marker1);
+       currentInfoWindow = infowindow1; 
+       });
        google.maps.event.addListener(map, 'zoom_changed', function() {
        var zoom = map.getZoom();
        if (zoom <= 15) {
@@ -55,519 +93,22 @@ html, body, #map-canvas {
        marker1.setMap(map);
      }
      });  
-       var marker2 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.33530, 103.776360),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 20',
-     });     
-       google.maps.event.addListener(marker2, 'dblclick', function(){
-       infoWindow.setContent('Indoor Sports Hall');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker2.setMap(null);
-     } else {
-       marker2.setMap(map);
-     }
-     });
-  
-       var marker3 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.33465, 103.776350),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 8',
-     });
-       google.maps.event.addListener(marker3, 'dblclick', function(){
-       infoWindow.setContent('Alpha Center');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker3.setMap(null);
-     } else {
-       marker3.setMap(map);
-     }
-     });
-  
-       var marker4 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.33460, 103.777080),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 7',
-     });
-       google.maps.event.addListener(marker4, 'dblclick', function(){
-       infoWindow.setContent('School of Electronic & Computer Engineering');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker4.setMap(null);
-     } else {
-       marker4.setMap(map);
-     }
-     });
-
-       var marker5 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.33420, 103.776300),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 6',
-     });
-       google.maps.event.addListener(marker5, 'dblclick', function(){
-       infoWindow.setContent('Classrooms / Clean Room');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker5.setMap(null);
-     } else {
-       marker5.setMap(map);
-     }
-     });
-
-       var marker6 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.33410, 103.777000),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 5',
-     });
-       google.maps.event.addListener(marker6, 'dblclick', function(){
-       infoWindow.setContent('NP Coop');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker6.setMap(null);
-     } else {
-       marker6.setMap(map);
-     }
-     });
-
-       var marker7 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.33380, 103.776300),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 4',
-     });
-       google.maps.event.addListener(marker7, 'dblclick', function(){
-       infoWindow.setContent('Student Services Center');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker7.setMap(null);
-     } else {
-       marker7.setMap(map);
-     }
-     });
-
-       var marker8 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.33350, 103.777010),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 1',
-     });
-       google.maps.event.addListener(marker8, 'dblclick', function(){
-       infoWindow.setContent('Atrium');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker8.setMap(null);
-     } else {
-       marker8.setMap(map);
-     }
-     });
-
-       var marker9 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.33235, 103.7754400),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Convention|Centre',
-     });
-       google.maps.event.addListener(marker9, 'dblclick', function(){
-       infoWindow.setContent('Convention Center');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker9.setMap(null);
-     } else {
-       marker9.setMap(map);
-     }
-     });
-
-       var marker10 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.333900, 103.775400),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 23',
-     });
-       google.maps.event.addListener(marker10, 'dblclick', function(){
-       infoWindow.setContent('School of Electrical Engineering');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker10.setMap(null);
-     } else {
-       marker10.setMap(map);
-     }
-     });
-
-       var marker11 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.333450, 103.775300),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 27',
-     });
-       google.maps.event.addListener(marker11, 'dblclick', function(){
-       infoWindow.setContent('School of InfoComm Technology');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker11.setMap(null);
-     } else {
-       marker11.setMap(map);
-     }
-     });
-
-       var marker12 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.333500, 103.774700),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 31',
-     });
-       google.maps.event.addListener(marker12, 'dblclick', function(){
-       infoWindow.setContent('School of InfoComm Technology');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker12.setMap(null);
-     } else {
-       marker12.setMap(map);
-     }
-     });
-
-       var marker13 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.332080, 103.774400),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 51',
-     });
-       google.maps.event.addListener(marker13, 'dblclick', function(){
-       infoWindow.setContent('Makan Place');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker13.setMap(null);
-     } else {
-       marker13.setMap(map);
-     }
-     });
-
-       var marker14 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.331450, 103.775030),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 53',
-     });
-       google.maps.event.addListener(marker14, 'dblclick', function(){
-       infoWindow.setContent('School of Film & Media Studies');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker14.setMap(null);
-     } else {
-       marker14.setMap(map);
-     }
-     });
-
-       var marker15 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.331600, 103.773850),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 50',
-     });
-       google.maps.event.addListener(marker13, 'dblclick', function(){
-       infoWindow.setContent('Classrooms');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker15.setMap(null);
-     } else {
-       marker15.setMap(map);
-     }
-     });
-
-       var marker16 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.331150, 103.774690),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 54',
-     });
-       google.maps.event.addListener(marker16, 'dblclick', function(){
-       infoWindow.setContent('Classrooms');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker16.setMap(null);
-     } else {
-       marker16.setMap(map);
-     }
-     });
-
-       var marker17 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.333500, 103.774060),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 34',
-     });
-       google.maps.event.addListener(marker17, 'dblclick', function(){
-       infoWindow.setContent('School of Design & Environment');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker17.setMap(null);
-     } else {
-       marker17.setMap(map);
-     }
-     });
-
-       var marker18 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.333250, 103.773700),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 35',
-     });
-       google.maps.event.addListener(marker18, 'dblclick', function(){
-       infoWindow.setContent('School of Design & Environment');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker18.setMap(null);
-     } else {
-       marker18.setMap(map);
-     }
-     });
-
-       var marker19 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.333020, 103.772500),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 39',
-     });
-       google.maps.event.addListener(marker19, 'dblclick', function(){
-       infoWindow.setContent('School of Design & Environment');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker19.setMap(null);
-     } else {
-       marker19.setMap(map);
-     }
-     });
-
-       var marker20 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.332650, 103.772000),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 40',
-     });
-       google.maps.event.addListener(marker20, 'dblclick', function(){
-       infoWindow.setContent('School of Design & Environment');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker20.setMap(null);
-     } else {
-       marker20.setMap(map);
-     }
-     });
-
-       var marker21 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.331710, 103.775870),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 72',
-     });
-       google.maps.event.addListener(marker21, 'dblclick', function(){
-       infoWindow.setContent('School of Business & Accountancy');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker21.setMap(null);
-     } else {
-       marker21.setMap(map);
-     }
-     });
-
-       var marker22 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.331710, 103.776520),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 73',
-     });
-       google.maps.event.addListener(marker22, 'dblclick', function(){
-       infoWindow.setContent('Munch');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker22.setMap(null);
-     } else {
-       marker22.setMap(map);
-     }
-     });
-
-       var marker23 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.331230, 103.775820),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 71',
-     });
-       google.maps.event.addListener(marker23, 'dblclick', function(){
-       infoWindow.setContent('Lecture Theatres');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker23.setMap(null);
-     } else {
-       marker23.setMap(map);
-     }
-     });
-
-       var marker24 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.330550, 103.774330),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 80',
-     });
-       google.maps.event.addListener(marker24, 'dblclick', function(){
-       infoWindow.setContent('School of Life Science & Chemical Technology');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker24.setMap(null);
-     } else {
-       marker24.setMap(map);
-     }
-     });
-
-       var marker25 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.330270, 103.774320),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 81',
-     });
-       google.maps.event.addListener(marker25, 'dblclick', function(){
-       infoWindow.setContent('Lecture Theatres');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker25.setMap(null);
-     } else {
-       marker25.setMap(map);
-     }
-     });
-
-       var marker26 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.330500, 103.775000),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 83',
-     });
-       google.maps.event.addListener(marker26, 'dblclick', function(){
-       infoWindow.setContent('NP Coop');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker26.setMap(null);
-     } else {
-       marker26.setMap(map);
-     }
-     });
-
-      var marker27 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.330200, 103.775000),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 82',
-     });
-       google.maps.event.addListener(marker27, 'dblclick', function(){
-       infoWindow.setContent('NP Coop');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker27.setMap(null);
-     } else {
-       marker27.setMap(map);
-     }
-     });
-
-      var marker28 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.332250, 103.771600),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 44',
-     });
-       google.maps.event.addListener(marker28, 'dblclick', function(){
-       infoWindow.setContent('NP Coop');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker28.setMap(null);
-     } else {
-       marker28.setMap(map);
-     }
-     });
-
-      var marker29 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.33320, 103.776190),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 56'
-     });
-       google.maps.event.addListener(marker29, 'dblclick', function(){
-       infoWindow.setContent('Classrooms');
-       infoWindow.open(map, this);       
-     });     
-       google.maps.event.addListener(map, 'zoom_changed', function() {
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker29.setMap(null);
-     } else {
-       marker29.setMap(map);
-     }
-     });
-
+   
       var marker30 = new google.maps.Marker({
        position: new google.maps.LatLng(1.33302, 103.775800),
        map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Blk 58'
+       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|58'
      });
-       google.maps.event.addListener(marker30, 'dblclick', function(){
-       infoWindow.setContent('School of IS');
-       infoWindow.open(map, this);       
-     });     
+      var infowindow30 = new google.maps.InfoWindow({
+       content: "<div><p>Facilities<li>Coffee Bean</li><li>Student Study Lounge</li></p><img width='300' height='200' src='NP58-1.jpg'></div>"
+     });
+       google.maps.event.addListener(marker30, 'mouseover', function(){
+       if (currentInfoWindow != null){
+           currentInfoWindow.close();
+       }
+       infowindow30.open(map, marker30);
+       currentInfoWindow = infowindow30; 
+     }); 
        google.maps.event.addListener(map, 'zoom_changed', function() {
        var zoom = map.getZoom();
        if (zoom <= 15) {
@@ -575,10 +116,7 @@ html, body, #map-canvas {
      } else {
        marker30.setMap(map);
      }
-     });   
-
-  
-
+     });
 
      }
 
