@@ -24,6 +24,8 @@ html, body, #map-canvas {
     
      function initialise()
      { console.log(location);
+     
+       var landmarks = JSON.parse(Get("http://liuclaudia.github.io/NPMap/landmark.json"))
 
        var mapOptions = {
        center: new google.maps.LatLng(1.33235, 103.775440),
