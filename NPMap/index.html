@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head> 
-<title>MAP</title>
+<title>Ngee Ann Polytechnic</title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
 
@@ -56,13 +56,13 @@ html, body, #map-canvas {
      </script>
      <script type="text/javascript">
        var map;
-       var homeLatLng = new google.maps.LatLng(1.33302, 103.775900);
+       var homeLatLng = new google.maps.LatLng(1.33332, 103.775900);
     
      function initialise()
      { console.log(location);
      
        var mapOptions = {
-       center: new google.maps.LatLng(1.33302, 103.775900),
+       center: new google.maps.LatLng(1.33332, 103.775900),
        zoom: 17,
        mapTypeId: google.maps.MapTypeId.ROADMAP
      };
@@ -104,10 +104,10 @@ html, body, #map-canvas {
 
        polygon = new google.maps.Polygon({
        paths: polygonCoords,
-       strokeColor: '#AFDCEC',
+       strokeColor: '#ADDFFF',
        strokeOpacity: 0.8,
        strokeWeight: 1,
-       fillColor: '#CFECEC',
+       fillColor: '#ADDFFF',
        fillOpacity: 0.35
      });
 
@@ -119,7 +119,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|16',
      });
        var infowindow1 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Poolside Canteen</li><li>Cupplets</li><li>Swimming Pool</li></p><img width='300' height='200' src='download.png'></div>"
+       content: "<div><p>Sports Complex<li>Poolside Canteen</li><li>Cupplets</li><li>Swimming Pool</li></p><img width='300' height='200' src='download.png'></div>"
      });
        google.maps.event.addListener(marker1, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -143,7 +143,7 @@ html, body, #map-canvas {
       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|20', 
      });
       var infowindow2 = new google.maps.InfoWindow({
-      content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP20.jpg'></div>"
+      content: "<div><p>Indoor Sports Hall</p><img width='300' height='200' src='NP20.jpg'></div>"
      });
       google.maps.event.addListener(marker2, 'mouseover', function(){
       if (currentInfoWindow != null){
@@ -167,7 +167,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|8',
      });
        var infowindow3 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP8.jpg'></div>"
+       content: "<div><p>Alpha Centre</p><img width='300' height='200' src='NP8.jpg'></div>"
      });
        google.maps.event.addListener(marker3, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -191,7 +191,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|7',
      });
        var infowindow4 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP7.jpg'></div>"
+       content: "<div><p><b>School of Electronic & Computer Engineering</b></p><img width='300' height='200' src='NP7.jpg'></div>"
      });
        google.maps.event.addListener(marker4, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -215,7 +215,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|6',
      });
        var infowindow5 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP6.jpg'></div>"
+       content: "<div><p>Facilities<li>Optometry Centre</li><li>MicroE Lab</li></p><img width='300' height='200' src='NP6.jpg'></div>"
      });
        google.maps.event.addListener(marker5, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -239,7 +239,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|5',
      });
        var infowindow6 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP5.jpg'></div>"
+       content: "<div><p>Facilities<li>NP Coop</li><li>Dialogue in the Dark</li></p><img width='300' height='200' src='NP5 (2).jpg'></div>"
      });
        google.maps.event.addListener(marker6, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -263,7 +263,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|4',
      });
        var infowindow7 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP4.jpg'></div>"
+       content: "<div><p>Facilities<li>Student Services Center</li><li>Library Office</li></p><img width='300' height='200' src='NP4.jpg'></div>"
      });
        google.maps.event.addListener(marker7, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -287,7 +287,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|1',
      });
        var infowindow8 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP1.jpg'></div>"
+       content: "<div><p>Administrative Building<li>The Atrium</li><li>Splash & Decker</li></p><img width='300' height='200' src='NP1.jpg'></div>"
      });
        google.maps.event.addListener(marker8, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -311,7 +311,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|Convention|Centre',
      });
        var infowindow9 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NPCC.jpg'></div>"
+       content: "<div><p>Convention Centre<li>Lecture Theatres</li></p><img width='300' height='200' src='NPCC.jpg'></p></div>"
      });
        google.maps.event.addListener(marker9, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -335,7 +335,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|23',
      });
        var infowindow10 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP23.jpg'></div>"
+       content: "<div><p><b>School of Electrical Engineering</b></p><img width='300' height='200' src='NP23.jpg'><a href='http://www.np.edu.sg/soe/courses/ee/Pages/ee.aspx'><p>more info</p></a></div>"
      });
        google.maps.event.addListener(marker10, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -359,7 +359,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|27',
      });
        var infowindow11 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP27.jpg'></div>"
+       content: "<div><p><b>School of Infocomm Technology</b><li>Studio27</li></p><img width='300' height='200' src='NP27.jpg'></div>"
      });
        google.maps.event.addListener(marker11, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -383,7 +383,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|31',
      });
        var infowindow12 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP31.jpg'></div>"
+       content: "<div><p><b>School of Infocomm Technology</b></p><img width='300' height='200' src='NP31.jpg'><a href='http://www.np.edu.sg/ict/Pages/default.aspx'><p>more info</p></a></div>"
      });
        google.maps.event.addListener(marker12, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -407,7 +407,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|51',
      });
        var infowindow13 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP51.jpg'></div>"
+       content: "<div><p>Makan Place<li>Lecture Theatres</li><li>Classrooms</li></p><img width='300' height='200' src='NP51.jpg'></div>"
      });
        google.maps.event.addListener(marker13, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -431,7 +431,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|53',
      });
        var infowindow14 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP53.jpg'></div>"
+       content: "<div><p><b>School of Humanities & Social Sciences</b><li>The Caterpilla's Cove</li></p><img width='300' height='200' src='NP53.jpg'><a href='http://www.np.edu.sg/hms/Pages/default.aspx'><p>more info</p></a></div>"
      });
        google.maps.event.addListener(marker14, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -455,7 +455,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|50',
      });
        var infowindow15 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP50.jpg'></div>"
+       content: "<div><p>Facilities<li>Classrooms</li></p><img width='300' height='200' src='NP50.jpg'></div>"
      });
        google.maps.event.addListener(marker15, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -473,37 +473,13 @@ html, body, #map-canvas {
      }
      });
 
-       var marker16 = new google.maps.Marker({
-       position: new google.maps.LatLng(1.331150, 103.774690),
-       map: map,
-       icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|54',
-     });
-       var infowindow16 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP54.jpg'></div>"
-     });
-       google.maps.event.addListener(marker16, 'mouseover', function(){
-       if (currentInfoWindow != null){
-           currentInfoWindow.close();
-     }
-       infowindow16.open(map, marker16);
-       currentInfoWindow = infowindow16;
-     });
-       google.maps.event.addListener(map, 'zoom_changed', function(){
-       var zoom = map.getZoom();
-       if (zoom <= 15) {
-       marker16.setMap(null);
-     } else {
-       marker16.setMap(map);
-     }
-     });
-
        var marker17 = new google.maps.Marker({
        position: new google.maps.LatLng(1.333500, 103.774060),
        map: map,
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|34',
      });
        var infowindow17 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP34.jpg'></div>"
+       content: "<div><p><b>School of Design & Environment</b><li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP34.jpg'><a href='http://www.np.edu.sg/de/Pages/default.aspx'><p>more info</p></a></div>"
      });
        google.maps.event.addListener(marker17, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -527,7 +503,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|35',
      });
        var infowindow18 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP35.jpg'></div>"
+       content: "<div><p><b>School of Design & Environment</b></p><img width='300' height='200' src='NP35.jpg'></div>"
      });
        google.maps.event.addListener(marker18, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -551,7 +527,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|39',
      });
        var infowindow19 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP39.jpg'></div>"
+       content: "<div><p>Facilities<li>Solar Technology Centre</li><li>Innovation Centre</li></p><img width='300' height='200' src='NP39.jpg'></div>"
      });
        google.maps.event.addListener(marker19, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -575,7 +551,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|40',
      });
        var infowindow20 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP40.jpg'></div>"
+       content: "<div><p>Facilities<li>Classrooms</li></p><img width='300' height='200' src='NP40.jpg'></div>"
      });
        google.maps.event.addListener(marker20, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -599,7 +575,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|72',
      });
        var infowindow21 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP72.jpg'></div>"
+       content: "<div><p>Facilities<li>OurSpace</li><li>Sushi Tei</li></p><img width='300' height='200' src='NP72.jpg'><a href='http://www.np.edu.sg/ba/Pages/Default.aspx/'><p>more info</a></p></div>"
      });
        google.maps.event.addListener(marker21, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -623,7 +599,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|73',
      });
        var infowindow22 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP73.jpg'></div>"
+       content: "<div><p>Facilities<li>Munch</li><li>Music Box</li></p><img width='300' height='200' src='NP73.jpg'></div>"
      });
        google.maps.event.addListener(marker22, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -647,7 +623,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|71',
      });
        var infowindow23 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP71.jpg'></div>"
+       content: "<div><p>Facilities<li>Classrooms</li></p><img width='300' height='200' src='NP71.jpg'></div>"
      });
        google.maps.event.addListener(marker23, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -671,7 +647,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|80',
      });
        var infowindow24 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP80.jpg'></div>"
+       content: "<div><p><b>School of Health Sciences</b></p><img width='300' height='200' src='NP80.jpg'><a href='http://www.np.edu.sg/hs/Pages/default.aspx'><p>more info</p></a></div>"
      });
        google.maps.event.addListener(marker24, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -695,7 +671,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|81',
      });
        var infowindow25 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP81.jpg'></div>"
+       content: "<div><p><b>School of Health Sciences</b></p><img width='300' height='200' src='NP81.jpg'></div>"
      });
        google.maps.event.addListener(marker25, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -719,7 +695,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|83',
      });
        var infowindow26 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP83.jpg'></div>"
+       content: "<div><p><b>School of Life Sciences & Chemical Technology</b><li>NP Coop</li></p><img width='300' height='200' src='NP83.jpg'><a href='http://www.np.edu.sg/lsct/Pages/default.aspx'><p>more info</p></a></div>"
      });
        google.maps.event.addListener(marker26, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -743,7 +719,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|82',
      });
        var infowindow27 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP82.jpg'></div>"
+       content: "<div><p></p><img width='300' height='200' src='NP82.jpg'></div>"
      });
        google.maps.event.addListener(marker27, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -767,7 +743,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|44',
      });
        var infowindow28 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP44.jpg'></div>"
+       content: "<div><p>Facilities<li>Classrooms</li></p><img width='300' height='200' src='NP44.jpg'></div>"
      });
        google.maps.event.addListener(marker28, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -791,7 +767,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|56',
      });
        var infowindow29 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Indoor Sports Hall</li></p><img width='300' height='200' src='NP56.jpg'></div>"
+       content: "<div><p>CET Academy<li>Classrooms</li></p><img width='300' height='200' src='NP56.jpg'></div>"
      });
        google.maps.event.addListener(marker29, 'mouseover', function(){
        if (currentInfoWindow != null){
@@ -815,7 +791,7 @@ html, body, #map-canvas {
        icon: 'https://chart.googleapis.com/chart?chst=d_text_outline&chld=000000|12|h|FFFFFF|_|58'
      });
       var infowindow30 = new google.maps.InfoWindow({
-       content: "<div><p>Facilities<li>Coffee Bean</li><li>Student Study Lounge</li></p><img width='300' height='200' src='NP58.jpg'></div>"
+       content: "<div><p>Facilities<li>Coffee Bean</li><li>Student Study Lounge</li><li>Lecture Theatres</li></p><img width='300' height='200' src='NP58.jpg'></div>"
      });
        google.maps.event.addListener(marker30, 'mouseover', function(){
        if (currentInfoWindow != null){
